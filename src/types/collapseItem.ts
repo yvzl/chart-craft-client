@@ -4,5 +4,4 @@ export interface ICollapseItem {
     id: string
     title: string
     content: Component
-
 }
