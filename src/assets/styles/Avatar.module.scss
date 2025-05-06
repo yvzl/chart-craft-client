@@ -1,0 +1,9 @@
+.avatar {
+  width: 35px;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+
+  > img {
+    height: 100%;
+  }
+}

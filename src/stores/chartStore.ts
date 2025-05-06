@@ -1,0 +1,21 @@
+import {defineStore} from "pinia";
+import {ref} from "vue"
+import {type IChart} from "@/types"
+
+export const chartStore = defineStore("chartStore", () => {
+    const chartData = ref<IChart[]>([{
+        id: "1",
+        name: "图表1",
+        cover: "",
+        date: '2025-04-16 10:37:24',
+    }, {
+        id: "2",
+        name: "图表2",
+        cover: "",
+        date: '2025-04-16 10:37:24',
+    }])
+
+    return {
+        chartData
+    }
+})

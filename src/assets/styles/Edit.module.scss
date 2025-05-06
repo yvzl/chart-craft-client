@@ -1,0 +1,14 @@
+.edit {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  > .main {
+    display: flex;
+    flex: 1;
+
+    > .chart {
+      flex: 1;
+    }
+  }
+}

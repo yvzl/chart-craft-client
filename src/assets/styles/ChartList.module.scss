@@ -1,0 +1,106 @@
+@use "Variables" as *;
+
+.chart-list {
+  display: contents;
+
+  > li {
+    width: 200px;
+    height: 180px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, .2);
+    background-color: $bg-color4;
+    margin: 0 0 30px 40px;
+
+    > .panel {
+      position: relative;
+      height: 130px;
+
+      > .cover-outer {
+        height: 100%;
+        padding: 5pxg;
+
+        > .img-box {
+          height: 100%;
+          overflow: hidden;
+
+          > img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s linear;
+          }
+        }
+      }
+
+      > .mask {
+        opacity: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        transition: opacity 0.3s linear;
+        background-color: rgba(41, 55, 80, 0.9);
+        position: absolute;
+
+        > li {
+          color: $color2;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          cursor: pointer;
+
+          > .icon-outer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            aspect-ratio: 1 / 1;
+            border-radius: 100%;
+            border: 1px solid $color2;
+          }
+
+          > p {
+            font-size: 12px;
+            margin-top: 7px;
+          }
+
+          &:hover {
+            color: $color3;
+          }
+
+          &:hover > .icon-outer {
+            border: 1px solid $color1;
+            background-color: $color1;
+          }
+        }
+      }
+    }
+
+    > .info {
+      display: flex;
+      flex-direction: column;
+      padding: 0 5px;
+
+      > .name {
+        font-weight: bold;
+        align-self: center;
+        color: $color4;
+      }
+
+      > .date {
+        margin-top: 4px;
+        color: $color4;
+        font-size: 12px;
+      }
+    }
+
+    &:hover .mask {
+      opacity: 1;
+    }
+
+    &:hover .img-box > img {
+      transform: scale(1.1);
+    }
+  }
+}

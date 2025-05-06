@@ -1,0 +1,13 @@
+@use "Variables" as *;
+@use "Mixins" as *;
+
+.text-input {
+  display: flex;
+  align-items: center;
+  height: $input-height;
+
+  > input {
+    width: 120px;
+    @include input;
+  }
+}

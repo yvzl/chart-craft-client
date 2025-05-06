@@ -1,0 +1,12 @@
+.check-code-outer {
+  display: flex;
+
+  > .code {
+    width: 85px;
+  }
+
+  > .code-input {
+    flex: 1;
+    margin-right: 10px;
+  }
+}

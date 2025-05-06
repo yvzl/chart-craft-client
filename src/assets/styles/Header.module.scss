@@ -1,0 +1,42 @@
+@use "Variables" as *;
+
+.header {
+  display: flex;
+  height: 55px;
+  align-items: center;
+  background-color: $bg-color1;
+  justify-content: space-between;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .05), 0 1px 0 rgba(0, 0, 0, .05);
+
+  > img {
+    margin-left: 20px;
+    height: 34px;
+    cursor: pointer;
+  }
+
+  > .user {
+    width: 160px;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+
+    > .name {
+      width: 70px;
+      margin-left: 15px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      color: $color5;
+    }
+
+    &:hover {
+      background-color: $bg-color2;
+    }
+
+    &:hover > .name {
+      color: #07bf84;
+    }
+  }
+}

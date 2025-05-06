@@ -1,0 +1,39 @@
+@use "Variables" as *;
+
+.nav-bar {
+  display: flex;
+  height: 40px;
+  justify-content: flex-end;
+  background-color: $bg-color2;
+
+  > ul {
+    display: flex;
+
+    > li {
+      height: 100%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: $color2;
+      padding: 6px 12px;
+
+      > :deep(.i-icon) {
+        font-size: 16px;
+      }
+
+      > span {
+        font-size: 13px;
+      }
+
+      &:hover {
+        color: $color3;
+        background-color: rgba(0, 0, 0, .2);
+      }
+    }
+
+    > .active {
+      color: $color3;
+    }
+  }
+}

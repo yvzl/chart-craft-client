@@ -1,0 +1,8 @@
+.check-code-outer {
+  display: flex;
+
+  > .code-input {
+    margin-right: 10px;
+    flex: 1;
+  }
+}

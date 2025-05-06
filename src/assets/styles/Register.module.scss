@@ -1,0 +1,13 @@
+@use "Variables" as *;
+@use "Mixins" as *;
+
+.register {
+  > .input {
+    margin-top: 20px;
+  }
+
+  > .register-btn {
+    margin-top: 30px;
+    @include form-submit;
+  }
+}

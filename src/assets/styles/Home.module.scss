@@ -1,0 +1,21 @@
+@use "Variables" as *;
+
+.home {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  > .main {
+    flex: 1;
+    background-color: $bg-color3;
+
+    > .scroll_ {
+      margin-top: 30px;
+
+      > .list {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+  }
+}

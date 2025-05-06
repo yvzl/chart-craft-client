@@ -1,0 +1,82 @@
+@use "Mixins" as *;
+
+.edit-data {
+  .edit-data-main {
+    > .box {
+      @include collapse-box;
+
+      .table-outer {
+        width: 100%;
+        height: 410px;
+        background-color: #f0f0f0ff;
+        overflow: auto;
+
+        > table {
+          width: 100%;
+          table-layout: fixed;
+          border: {
+            spacing: 0;
+            collapse: separate;
+            bottom: 1px solid #ccc;
+            top: 1px solid #ccc;
+            left: 1px solid #ccc;
+          }
+
+          > tr {
+            font-size: 14px;
+
+            > td {
+              background-color: white;
+
+              > input {
+                text-align: center;
+                color: #58666e;
+                width: 100%;
+                background: transparent;
+                border: none;
+                outline: none;
+              }
+            }
+
+            > th {
+              position: sticky;
+              font-weight: normal;
+              color: #222;
+              background-color: #f0f0f0ff;
+
+              > div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              }
+            }
+
+            > .col {
+              z-index: 2;
+              top: 0;
+              border-bottom: 1px solid #ccc;
+            }
+
+            > .row {
+              z-index: 1;
+              left: 0;
+            }
+
+            > td, th {
+              border-right: 1px solid #ccc;
+              width: 60px;
+              height: 25px;
+            }
+          }
+        }
+      }
+
+      .btn-list {
+        display: flex;
+        gap: 20px;
+        font-size: 14px;
+        margin-top: 15px;
+      }
+    }
+  }
+}

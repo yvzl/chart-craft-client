@@ -1,0 +1,43 @@
+@use "Variables" as *;
+
+@mixin form-submit {
+  text-align: center;
+  padding: 10px 140px;
+  font: {
+    weight: bold;
+    size: 18px;
+  };
+}
+
+@mixin content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin collapse-box {
+  padding: 10px 0 0 18px;
+
+  > .header {
+    color: $color5;
+    font-size: 15px;
+  }
+
+  > .content {
+    padding: 20px 0 10px 0;
+    @include content;
+  }
+
+  > .other-content {
+    @include content;
+  }
+}
+
+@mixin input {
+  font-size: 12px;
+  padding: 0 6px;
+  background-color: $bg-color5;
+  color: $color6;
+  height: 100%;
+}

@@ -1,0 +1,12 @@
+@use "Variables" as *;
+
+.chart-view {
+  padding: 25px;
+  height: 100%;
+  background-color: $bg-color3;
+
+  > .content {
+    height: 100%;
+    border: 1px solid $color2;
+  }
+}
