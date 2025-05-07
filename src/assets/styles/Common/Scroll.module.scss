@@ -1,0 +1,5 @@
+@use "@/assets/styles/Mixins" as *;
+
+.scroll {
+  @include scroll
+}

@@ -1,0 +1,50 @@
+@use "@/assets/styles/Variables" as *;
+@use "@/assets/styles/Mixins" as *;
+
+.select {
+  position: relative;
+  min-width: 100px;
+  cursor: pointer;
+
+  > .content {
+    display: flex;
+    height: $input-height;
+
+    > .value {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      @include input;
+    }
+
+    > .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 1 / 1;
+      height: 100%;
+      color: $color6;
+      background-color: $bg-color7;
+      font-size: 14px;
+    }
+  }
+
+  > ul {
+    border-radius: 2px;
+    margin-top: 2px;
+    width: 100%;
+    position: absolute;
+
+    > li {
+      font-size: 12px;
+      padding: 4px 10px;
+      background-color: $bg-color5;
+      color: $color6;
+
+      &:hover {
+        background-color: $color3;
+        color: $bg-color6;
+      }
+    }
+  }
+}

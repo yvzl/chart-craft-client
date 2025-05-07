@@ -1,0 +1,17 @@
+@use "@/assets/styles/Variables" as *;
+
+.user-action {
+  display: flex;
+
+  > li {
+    font-size: 14px;
+    color: $color1;
+    cursor: pointer;
+
+    &:not(:last-of-type)::after {
+      content: '|';
+      color: $color2;
+      padding: 10px;
+    }
+  }
+}

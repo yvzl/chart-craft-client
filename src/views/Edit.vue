@@ -2,10 +2,10 @@
 import {useRoute} from "vue-router"
 import {editBarList, editBarEventMap, collapseList} from "@/configs"
 import {mapEvent} from "@/utils"
-import Header from "@/components/Header.vue";
-import NavBar from "@/components/NavBar.vue";
-import Collapse from "@/components/Collapse.vue";
-import ChartView from "@/components/ChartView.vue";
+import Header from "@/components/Common/Header.vue";
+import NavBar from "@/components/Common/NavBar.vue";
+import Collapse from "@/components/Edit/Collapse.vue";
+import ChartView from "@/components/Edit/ChartView.vue";
 import {ref} from "vue";
 
 const route = useRoute()
@@ -35,5 +35,5 @@ const NavBarEmits = mapEvent(editBarList, editBarEventMap)
 </template>
 
 <style scoped lang="scss">
-@use "@/assets/styles/Edit.module";
+@use "@/assets/styles/Edit/Edit.module";
 </style>

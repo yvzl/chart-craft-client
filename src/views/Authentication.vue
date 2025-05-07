@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import {ref} from "vue";
-import Forgot from "@/components/Forgot.vue";
-import Login from "@/components/Login.vue";
-import Register from "@/components/Register.vue";
+import Forgot from "@/components/Authentication/Forgot.vue";
+import Login from "@/components/Authentication/Login.vue";
+import Register from "@/components/Authentication/Register.vue";
 
 const state = ref(true)
 const state2 = ref(true)
@@ -45,5 +45,5 @@ const state2 = ref(true)
 </template>
 
 <style scoped lang="scss">
-@use "@/assets/styles/Authentication.module";
+@use "@/assets/styles/Authentication/Authentication.module";
 </style>

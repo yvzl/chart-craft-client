@@ -1,0 +1,18 @@
+@use "@/assets/styles/Variables" as *;
+
+.authentication-button {
+  display: inline-block;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 6px 12px;
+}
+
+.default {
+  color: $color4;
+  background-color: $color3;
+}
+
+.primary {
+  color: $color3;
+  background-color: $color1;
+}

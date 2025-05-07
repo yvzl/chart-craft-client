@@ -1,0 +1,16 @@
+@use "@/assets/styles/Variables" as *;
+@use "@/assets/styles/Mixins" as *;
+
+.register {
+  > .input {
+    margin-top: 20px;
+  }
+
+  > .register-btn {
+    margin-top: 30px;
+
+    > .btn {
+      @include form-submit;
+    }
+  }
+}

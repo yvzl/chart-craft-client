@@ -1,0 +1,30 @@
+@use "@/assets/styles/Variables" as *;
+
+.create-chart {
+  width: 160px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  margin: 30px 20px 0 60px;
+
+  > img {
+    width: 115px;
+    height: 100px;
+    transition: transform 0.2s linear;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  > p {
+    color: $color4;
+    font: {
+      weight: bold;
+      size: 14px;
+    }
+    margin-top: 5px;
+  }
+}

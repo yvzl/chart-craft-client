@@ -1,0 +1,24 @@
+@use "@/assets/styles/Variables" as *;
+@use "@/assets/styles/Mixins" as *;
+
+.forgot {
+  > .input {
+    margin-top: 20px;
+  }
+
+  > .register-btn {
+    margin-top: 30px;
+
+    > .btn {
+      @include form-submit;
+    }
+  }
+
+  > .return-btn {
+    margin-top: 15px;
+    text-align: right;
+    cursor: pointer;
+    font-size: 14px;
+    color: $color1;
+  }
+}

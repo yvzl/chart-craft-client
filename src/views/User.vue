@@ -2,10 +2,10 @@
 import {ref} from 'vue'
 import {mapEvent} from "@/utils";
 import {userActions, userActionsEventMap, userBarList, userBatListMap} from "@/configs";
-import Header from "@/components/Header.vue";
-import Avatar from "@/components/Avatar.vue";
-import UserAction from "@/components/UserAction.vue";
-import UserBar from "@/components/UserBar.vue";
+import Header from "@/components/Common/Header.vue";
+import Avatar from "@/components/Common/Avatar.vue";
+import UserAction from "@/components/User/UserAction.vue";
+import UserBar from "@/components/User/UserBar.vue";
 
 const state = ref("1")
 const userActionsListEmits = mapEvent(userActions, userActionsEventMap)
@@ -33,5 +33,5 @@ const userActionsListEmits = mapEvent(userActions, userActionsEventMap)
 </template>
 
 <style scoped lang="scss">
-@use "@/assets/styles/User.module";
+@use "@/assets/styles/User/User.module";
 </style>

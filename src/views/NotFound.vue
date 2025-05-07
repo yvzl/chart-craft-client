@@ -3,9 +3,11 @@
 </script>
 
 <template>
-  <h2>404 Not Found</h2>
+  <div class="not-found">
+    <h2>404 Not Found</h2>
+  </div>
 </template>
 
 <style scoped lang="scss">
-@use "@/assets/styles/NotFound.module";
+@use "@/assets/styles/NotFound/NotFound.module";
 </style>

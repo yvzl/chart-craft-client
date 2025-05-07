@@ -1,0 +1,14 @@
+@use "@/assets/styles/Variables" as *;
+@use "@/assets/styles/Mixins" as *;
+
+.text-input {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: $input-height;
+
+  > input {
+    width: 100%;
+    @include input;
+  }
+}

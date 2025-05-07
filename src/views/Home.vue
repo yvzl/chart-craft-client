@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import Header from "@/components/Header.vue"
+import Header from "@/components/Common/Header.vue"
 import {mapEvent} from "@/utils";
 import {chartBtnList, chartBtnEventMap, homeBarList, homeBarEventMap} from "@/configs"
-import ChartList from "@/components/ChartList.vue"
-import NavBar from "@/components/NavBar.vue"
-import Scroll from "@/components/Scroll.vue"
-import CreateChart from "@/components/CreateChart.vue"
+import ChartList from "@/components/Home/ChartList.vue"
+import NavBar from "@/components/Common/NavBar.vue"
+import Scroll from "@/components/Common/Scroll.vue"
+import CreateChart from "@/components/Home/CreateChart.vue"
 
 import {onMounted, ref, useTemplateRef} from "vue"
 import {storeToRefs} from "pinia"
@@ -13,7 +13,7 @@ import {chartStore} from "@/stores"
 
 const store = chartStore()
 
-const {chartData} = storeToRefs(store)
+const {chartMessage} = storeToRefs(store)
 
 const height = ref(0);
 const mainRef = useTemplateRef("mainRef");
@@ -36,7 +36,7 @@ const NavBarEmits = mapEvent(homeBarList, homeBarEventMap)
         <Scroll :height="height">
           <div class="list">
             <CreateChart/>
-            <ChartList v-on="chartListEmits" :btnList="chartBtnList" :data="chartData"/>
+            <ChartList v-on="chartListEmits" :btnList="chartBtnList" :data="chartMessage"/>
           </div>
         </Scroll>
       </div>
@@ -45,5 +45,5 @@ const NavBarEmits = mapEvent(homeBarList, homeBarEventMap)
 </template>
 
 <style lang="scss" scoped>
-@use "@/assets/styles/Home.module";
+@use "@/assets/styles/Home/Home.module";
 </style>
