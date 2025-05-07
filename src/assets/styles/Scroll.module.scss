@@ -1,17 +1,5 @@
+@use "Mixins" as *;
+
 .scroll {
-  overflow-y: auto;
-
-  &::-webkit-scrollbar {
-    width: 10px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.2);
-  }
-
-  &::-webkit-scrollbar-track {
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.1);
-  }
+  @include scroll
 }

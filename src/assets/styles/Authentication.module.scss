@@ -6,17 +6,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #27364fff;
+  background-color: $bg-color2;
 
   > .main {
     display: flex;
     align-items: center;
-
-    > .deco {
-      margin-right: 100px;
-    }
+    gap: 100px;
 
     > .box {
+
       > .logo {
         margin-bottom: 20px;
         display: flex;
@@ -46,7 +44,6 @@
         padding: 10px 0;
 
         .bar {
-          width: 380px;
           display: flex;
 
           > li {

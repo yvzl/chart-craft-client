@@ -5,19 +5,20 @@ import AuthenticationInput from "@/components/AuthenticationInput.vue";
 
 const props = defineProps<{
   modelValue: string
-  classList?: string[]
   cd?: number
 }>()
 
-const {modelValue, classList = []} = props
+const {modelValue} = props
 
 const emits = defineEmits(['update:modelValue']);
 const value = useModel(modelValue, props, "modelValue", emits, "update:modelValue")
 </script>
 
 <template>
-  <div :class="`check-code-outer ${classList.join(' ')}`">
-    <AuthenticationInput :classList="['code-input']" v-model="value" placeholder="请输入验证码"/>
+  <div class="check-code-outer">
+    <div class="input">
+      <AuthenticationInput v-model="value" placeholder="请输入验证码"/>
+    </div>
     <CheckEmailCode/>
   </div>
 </template>

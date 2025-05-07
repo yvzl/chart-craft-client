@@ -32,12 +32,14 @@ const NavBarEmits = mapEvent(homeBarList, homeBarEventMap)
     <Header/>
     <NavBar v-on="NavBarEmits" :barList="homeBarList"/>
     <div ref="mainRef" class="main">
-      <Scroll :classList="['scroll_']" :height="height">
-        <div class="list">
-          <CreateChart/>
-          <ChartList v-on="chartListEmits" :btnList="chartBtnList" :data="chartData"/>
-        </div>
-      </Scroll>
+      <div class="scroll_">
+        <Scroll :height="height">
+          <div class="list">
+            <CreateChart/>
+            <ChartList v-on="chartListEmits" :btnList="chartBtnList" :data="chartData"/>
+          </div>
+        </Scroll>
+      </div>
     </div>
   </div>
 </template>

@@ -8,7 +8,10 @@
 
   > .register-btn {
     margin-top: 30px;
-    @include form-submit;
+
+    > .btn {
+      @include form-submit;
+    }
   }
 
   > .return-btn {

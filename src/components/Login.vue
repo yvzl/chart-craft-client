@@ -21,9 +21,13 @@ const password = ref("")
 <template>
   <form class="login">
     <AuthenticationInput v-model="email" placeholder="邮箱"/>
-    <AuthenticationInputPassword :classList="['input']" v-model="password" placeholder="密码"/>
+    <div class="input">
+      <AuthenticationInputPassword v-model="password" placeholder="密码"/>
+    </div>
     <div @click="value = false" class="forgot">忘记密码</div>
-    <Submit type="primary" :classList="['login-btn']" value="登录"/>
+    <div class="login-btn">
+      <Submit type="primary" :classList="['btn']" value="登录"/>
+    </div>
   </form>
 </template>
 

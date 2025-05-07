@@ -6,6 +6,10 @@ import CheckBox from "@/components/CheckBox.vue";
 import ColorInput from "@/components/ColorInput.vue";
 import NumberInput from "@/components/NumberInput.vue";
 
+const {height = 0} = defineProps<{
+  height?: number
+}>()
+
 const data = ref({
   1: "上下",
   2: "左右"
@@ -16,10 +20,6 @@ const state = ref(false)
 const select = ref("1")
 
 const colorValue = ref("")
-
-const {height = 0} = defineProps<{
-  height?: number
-}>()
 
 const value = ref(1)
 </script>
@@ -33,7 +33,9 @@ const value = ref(1)
           <div class="level-content">
             <div class="attr">
               <span class="name">显示控件(X轴)：</span>
-              <CheckBox v-model="state"/>
+              <div class="check">
+                <CheckBox v-model="state"/>
+              </div>
             </div>
           </div>
         </div>
@@ -42,7 +44,9 @@ const value = ref(1)
           <div class="level-content">
             <div class="attr">
               <span class="name">下边距：</span>
-              <NumberInput v-model="value"/>
+              <div class="number">
+                <NumberInput v-model="value"/>
+              </div>
             </div>
           </div>
         </div>
@@ -51,7 +55,9 @@ const value = ref(1)
           <div class="level-content">
             <div class="attr">
               <span class="name">图例标记高度：</span>
-              <Select v-model="select" :data="data"/>
+              <div class="enter">
+                <Select v-model="select" :data="data"/>
+              </div>
             </div>
           </div>
           <div class="box2">
@@ -61,7 +67,9 @@ const value = ref(1)
             <div class="level-content">
               <div class="attr">
                 <span class="name">颜色：</span>
-                <ColorInput v-model="colorValue"/>
+                <div class="color">
+                  <ColorInput v-model="colorValue"/>
+                </div>
               </div>
             </div>
           </div>

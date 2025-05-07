@@ -24,6 +24,7 @@ export const userStore = defineStore("userStore", () => {
     }])
 
     const userState = ref("1")
+    // const userState = ref(null)
 
     return {
         userList,

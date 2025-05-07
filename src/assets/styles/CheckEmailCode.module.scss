@@ -1,4 +1,8 @@
 .check-email-code {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
   > .code-btn {
     width: 85px;
     font-size: 12px !important;

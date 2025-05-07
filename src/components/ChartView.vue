@@ -1,11 +1,9 @@
 <script setup lang="ts">
-const {classList = []} = defineProps<{
-  classList?: Array<string>;
-}>()
+
 </script>
 
 <template>
-  <div :class="`chart-view ${classList.join(' ')}`">
+  <div class="chart-view">
     <div class="content">
 
     </div>

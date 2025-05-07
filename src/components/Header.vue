@@ -9,7 +9,9 @@ const router = useRouter();
   <div class="header">
     <img @click="router.push({name: 'Home'})" src="@/assets/images/logo.png" alt="?"/>
     <div @click="router.push({name: 'User'})" class="user">
-      <Avatar/>
+      <div class="head">
+        <Avatar/>
+      </div>
       <div class="name">_wx 6459</div>
     </div>
   </div>

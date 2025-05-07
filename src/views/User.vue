@@ -16,7 +16,9 @@ const userActionsListEmits = mapEvent(userActions, userActionsEventMap)
     <Header/>
     <div class="main">
       <div class="info">
-        <Avatar :classList="['head']"/>
+        <div class="head">
+          <Avatar/>
+        </div>
         <p>_wx 6459</p>
         <UserAction v-on="userActionsListEmits" :data="userActions"/>
       </div>

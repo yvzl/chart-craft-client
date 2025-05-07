@@ -1,8 +1,8 @@
 @use "Variables" as *;
 
 .check-box {
-  width: 16px;
-  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
 
   > label {
     display: flex;
@@ -18,7 +18,7 @@
 
       &:checked + span {
         display: block;
-        color: #07bf84;
+        color: $color1;
       }
     }
 

@@ -1,12 +1,11 @@
 <script setup lang="ts">
-const {height = 0, classList = []} = defineProps<{
+const {height = 0} = defineProps<{
   height?: number;
-  classList?: string[]
 }>()
 </script>
 
 <template>
-  <div :style="{height: `${height}px`}" :class="`scroll ${classList.join(' ')}`">
+  <div :style="{height: `${height}px`}" class="scroll">
     <slot></slot>
   </div>
 </template>

@@ -2,12 +2,13 @@
 @use "Mixins" as *;
 
 .number-input {
+  width: 100%;
   height: $input-height;
   display: flex;
   align-items: center;
 
   > input {
-    width: 120px;
+    width: 100%;
     @include input;
 
     &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
@@ -24,7 +25,7 @@
     > div {
       display: flex;
       justify-content: center;
-      color: $color5;
+      color: $color6;
       height: 50%;
       font-size: 12px;
     }

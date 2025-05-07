@@ -1,12 +1,12 @@
 .check-code-outer {
   display: flex;
+  gap: 10px;
 
   > .code {
     width: 85px;
   }
 
-  > .code-input {
+  > .input {
     flex: 1;
-    margin-right: 10px;
   }
 }

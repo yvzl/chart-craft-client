@@ -6,18 +6,19 @@ import AuthenticationInput from "@/components/AuthenticationInput.vue";
 const props = defineProps<{
   modelValue: string
   placeholder?: string
-  classList?: string[]
 }>()
 
-const {modelValue, placeholder = "", classList = []} = props
+const {modelValue, placeholder = ""} = props
 
 const emits = defineEmits(['update:modelValue']);
 const value = useModel(modelValue, props, "modelValue", emits, "update:modelValue")
 </script>
 
 <template>
-  <div :class="`check-code-outer ${classList.join(' ')}`">
-    <AuthenticationInput :classList="['code-input']" v-model="value" :placeholder="placeholder"/>
+  <div class="check-code-outer">
+    <div class="input">
+      <AuthenticationInput v-model="value" :placeholder="placeholder"/>
+    </div>
     <CheckCode :classList="['code']"/>
   </div>
 </template>

@@ -16,6 +16,9 @@
 
   > .login-btn {
     margin-top: 18px;
-    @include form-submit;
+
+    > .btn {
+      @include form-submit;
+    }
   }
 }

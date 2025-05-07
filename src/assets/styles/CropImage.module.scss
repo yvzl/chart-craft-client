@@ -1,0 +1,14 @@
+@use "Variables" as *;
+
+.crop-image {
+  width: 60%;
+  aspect-ratio: 1 / 1;
+  background-color: $bg-color1;
+  padding: 10px;
+
+  > .empty {
+    width: 100%;
+    height: 100%;
+    background-color: $bg-color6;
+  }
+}

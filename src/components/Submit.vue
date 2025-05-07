@@ -1,4 +1,4 @@
-<script setup lang="ts">
+s<script setup lang="ts">
 const {classList = [], value = "", type = "default"} = defineProps<{
   classList?: string[]
   value?: string

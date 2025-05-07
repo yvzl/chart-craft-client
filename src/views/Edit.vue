@@ -26,7 +26,9 @@ const NavBarEmits = mapEvent(editBarList, editBarEventMap)
     <Header/>
     <NavBar v-on="NavBarEmits" :barList="editBarList"/>
     <div class="main">
-      <ChartView :classList="['chart']"/>
+      <div class="chart">
+        <ChartView/>
+      </div>
       <Collapse :data="collapseList" v-model="state"/>
     </div>
   </div>

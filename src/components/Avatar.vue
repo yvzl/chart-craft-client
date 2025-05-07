@@ -1,14 +1,13 @@
 <script setup lang="ts">
 import defaultHead from "@/assets/images/default.jpg"
 
-const {src = defaultHead, classList = []} = defineProps<{
+const {src = defaultHead} = defineProps<{
   src?: string
-  classList?: string[]
 }>()
 </script>
 
 <template>
-  <div :class="`avatar ${classList.join(' ')}`">
+  <div class="avatar">
     <img :src="src" alt="?"/>
   </div>
 </template>

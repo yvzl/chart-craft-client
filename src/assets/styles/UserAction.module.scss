@@ -10,7 +10,7 @@
 
     &:not(:last-of-type)::after {
       content: '|';
-      color: #90a0b3;
+      color: $color2;
       padding: 10px;
     }
   }

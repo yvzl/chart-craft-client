@@ -36,8 +36,26 @@
 
 @mixin input {
   font-size: 12px;
-  padding: 0 6px;
+  padding: 6px;
   background-color: $bg-color5;
   color: $color6;
   height: 100%;
+}
+
+@mixin scroll {
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.05);
+  }
 }

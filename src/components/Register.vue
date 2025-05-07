@@ -16,11 +16,21 @@ const emailCode = ref("")
 <template>
   <form class="register">
     <AuthenticationInput v-model="email" placeholder="请输入邮箱"/>
-    <AuthenticationInputPassword type="password" :classList="['input']" v-model="password" placeholder="请输入密码"/>
-    <AuthenticationInputPassword type="password" :classList="['input']" v-model="requiredPassword" placeholder="确认密码"/>
-    <CheckCodeOuter :classList="['input']" v-model="code" placeholder="请输入校验码"/>
-    <CheckEmailCodeOuter :classList="['input']" v-model="emailCode" placeholder="请输入验证码" :cd="60"/>
-    <Submit type="primary" :classList="['register-btn']" value="注册"/>
+    <div class="input">
+      <AuthenticationInputPassword type="password" v-model="password" placeholder="请输入密码"/>
+    </div>
+    <div class="input">
+      <AuthenticationInputPassword type="password" v-model="requiredPassword" placeholder="确认密码"/>
+    </div>
+    <div class="input">
+      <CheckCodeOuter v-model="code" placeholder="请输入校验码"/>
+    </div>
+    <div class="input">
+      <CheckEmailCodeOuter v-model="emailCode" placeholder="请输入验证码" :cd="60"/>
+    </div>
+    <div class="register-btn">
+      <Submit type="primary" :classList="['btn']" value="注册"/>
+    </div>
   </form>
 </template>
 

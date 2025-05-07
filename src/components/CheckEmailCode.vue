@@ -4,7 +4,7 @@ import Submit from "@/components/Submit.vue";
 
 <template>
   <div class="check-email-code">
-    <Submit :classList="['code-btn']" value="获取验证码"/>
+    <Submit type="primary" :classList="['code-btn']" value="获取验证码"/>
   </div>
 </template>
 

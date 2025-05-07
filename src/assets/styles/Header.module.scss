@@ -22,6 +22,10 @@
     align-items: center;
     padding-left: 15px;
 
+    > .head {
+      width: 35px;
+    }
+
     > .name {
       width: 70px;
       margin-left: 15px;
@@ -36,7 +40,7 @@
     }
 
     &:hover > .name {
-      color: #07bf84;
+      color: $color1;
     }
   }
 }
