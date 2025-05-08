@@ -1,10 +1,8 @@
-import {chartOption} from "@/types";
+import type {NumberOption} from "@/types";
 
-export const opacityConfigs: chartOption = {
-    opacity: {
-        name: "透明度",
-        type: "number",
-        min: 0,
-        max: 1
-    }
+export const opacity: NumberOption = {
+    name: "透明度",
+    type: "number",
+    min: 0,
+    max: 1
 }

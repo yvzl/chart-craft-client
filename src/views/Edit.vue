@@ -1,19 +1,19 @@
 <script setup lang="ts">
+import {ref} from "vue";
+import {mapEvent} from "@/utils"
 import {useRoute} from "vue-router"
 import {editBarList, editBarEventMap, collapseList} from "@/configs"
-import {mapEvent} from "@/utils"
 import Header from "@/components/Common/Header.vue";
 import NavBar from "@/components/Common/NavBar.vue";
 import Collapse from "@/components/Edit/Collapse.vue";
 import ChartView from "@/components/Edit/ChartView.vue";
-import {ref} from "vue";
 
 const route = useRoute()
 
 if (route.name === 'Create') {
-  // console.log(1)
+
 } else {
-  // console.log(route.params.id)
+
 }
 
 const state = ref("1")

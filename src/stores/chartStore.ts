@@ -2,6 +2,7 @@ import {defineStore} from "pinia";
 import {ref} from "vue"
 import {type IChart} from "@/types"
 import type {EChartsOption} from "echarts"
+import {barTemplate} from "@/configs"
 
 export const chartStore = defineStore("chartStore", () => {
     const chartMessage = ref<IChart[]>([{
@@ -17,16 +18,17 @@ export const chartStore = defineStore("chartStore", () => {
     }])
 
     const chartData = ref<Record<string, EChartsOption>>({
-        "1": {
-
-        },
+        "1": barTemplate,
         "2": {
 
         }
     })
 
+    const selectChart = ref<string | null>("1")
+
     return {
         chartMessage,
-        chartData
+        chartData,
+        selectChart
     }
 })
