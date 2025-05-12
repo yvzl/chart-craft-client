@@ -1,30 +1,24 @@
 import {defineStore} from "pinia";
 import {ref} from "vue"
-import {type IChart} from "@/types"
-import type {EChartsOption} from "echarts"
+import {IChart, IChartTemplate, EntityMap} from "@/types"
 import {barTemplate} from "@/configs"
 
 export const chartStore = defineStore("chartStore", () => {
-    const chartMessage = ref<IChart[]>([{
-        id: "1",
-        name: "图表1",
-        cover: "",
-        date: '2025-04-16 10:37:24',
-    }, {
-        id: "2",
-        name: "图表2",
-        cover: "",
-        date: '2025-04-16 10:37:24',
-    }])
-
-    const chartData = ref<Record<string, EChartsOption>>({
-        "1": barTemplate,
-        "2": {
-
+    const chartMessage = ref<EntityMap<IChart>>({
+        1: {
+            id: "1",
+            name: "图表1",
+            cover: "",
+            date: '2025-04-16 10:37:24',
+            typeId: "2",
         }
     })
 
-    const selectChart = ref<string | null>("1")
+    const chartData = ref<Record<IChart["id"], IChartTemplate>>({
+        1: barTemplate,
+    })
+
+    const selectChart = ref<IChart["id"] | null>("1")
 
     return {
         chartMessage,

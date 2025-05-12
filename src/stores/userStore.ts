@@ -1,6 +1,6 @@
 import {defineStore} from "pinia";
 import {ref} from "vue"
-import {type IUser} from "@/types"
+import type {IUser} from "@/types"
 
 export const userStore = defineStore("userStore", () => {
     const userList = ref<IUser[]>([{
@@ -23,8 +23,7 @@ export const userStore = defineStore("userStore", () => {
         introduce: "",
     }])
 
-    const userState = ref("1")
-    // const userState = ref(null)
+    const userState = ref<IUser["id"] | null>("1")
 
     return {
         userList,

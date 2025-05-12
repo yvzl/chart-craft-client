@@ -1,4 +1,4 @@
-import type {IUserAction, EventMap} from "@/types";
+import type {IUserAction, Fn} from "@/types";
 import router from "@/router";
 
 export const userActions: IUserAction[] = [{
@@ -11,7 +11,7 @@ export const userActions: IUserAction[] = [{
     eventName: "share",
 }]
 
-export const userActionsEventMap: EventMap = {
+export const userActionsEventMap: Record<IUserAction["id"], Fn> = {
     1() {
         router.push({
             name: "Home",

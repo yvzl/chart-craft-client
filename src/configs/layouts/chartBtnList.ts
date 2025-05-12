@@ -1,4 +1,4 @@
-import type {IChartBtn, EventMap} from "@/types"
+import type {IChartBtn, Fn} from "@/types"
 import {PlayOne, ShareOne, Editor, Delete} from "@icon-park/vue-next"
 import router from "@/router";
 
@@ -24,7 +24,7 @@ export const chartBtnList: IChartBtn[] = [{
     eventName: "delete",
 }]
 
-export const chartBtnEventMap: EventMap = {
+export const chartBtnEventMap: Record<IChartBtn["id"], Fn> = {
     1(_: IChartBtn["id"]) {
 
     },

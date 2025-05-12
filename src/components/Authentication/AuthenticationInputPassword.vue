@@ -6,7 +6,7 @@ import {PreviewOpen, PreviewCloseOne} from "@icon-park/vue-next"
 const props = defineProps<{
   modelValue: string
   placeholder?: string
-  classList?: Array<string>
+  classList?: string[]
 }>()
 
 const {modelValue, placeholder = "", classList = []} = props

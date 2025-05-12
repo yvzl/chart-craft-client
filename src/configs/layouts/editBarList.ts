@@ -1,6 +1,6 @@
 import router from "@/router";
 import type {Ref} from "vue"
-import type {StateMap, EventMap, INavBarItem} from "@/types"
+import type {Fn, INavBarItem} from "@/types"
 import {PlayOne, Save, SaveOne, ShareThree, ShareOne, Return} from "@icon-park/vue-next"
 
 export const editBarList: INavBarItem[] = [{
@@ -35,7 +35,9 @@ export const editBarList: INavBarItem[] = [{
     eventName: "return",
 }]
 
-export const editBarEventMap: EventMap = {
+type StateMap = Record<INavBarItem["id"], boolean>
+
+export const editBarEventMap: Record<INavBarItem["id"], Fn> = {
     1(_: Ref<StateMap>, __: string) {
 
     },

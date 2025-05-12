@@ -1,0 +1,46 @@
+.attr-setting {
+  display: contents;
+}
+
+@for $i from 0 through 5 {
+  .box#{$i} {
+    font-size: 14px;
+    padding-left: #{($i * 10) + 15}px;
+
+    > .header {
+      margin-top: 10px;
+    }
+
+    > .attr-box {
+      padding-left: 0 #{$i * 10}px;
+
+      > .attr {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        padding-left: 20%;
+
+        > .string {
+          width: 104px;
+        }
+
+        > .number {
+          width: 90px;
+        }
+
+        > .boolean {
+          width: 18px;
+          aspect-ratio: 1 / 1;
+        }
+
+        > .map {
+
+        }
+
+        > .color {
+          width: 100px;
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import {ref, watch} from "vue";
-import type {INavBarItem, StateMap} from "@/types"
+import type {INavBarItem} from "@/types"
 
 const {barList} = defineProps<{
   barList: INavBarItem[]
 }>()
 
 const emits = defineEmits();
+
+type StateMap = Record<INavBarItem["id"], boolean>
 
 const resetMap = () => stateMap.value = barList.reduce((acc: StateMap, {id}) => {
   acc[id] = false

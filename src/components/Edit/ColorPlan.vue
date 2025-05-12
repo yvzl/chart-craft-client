@@ -18,7 +18,7 @@ const {height = 0} = defineProps<{
           <div class="header">系统主题：</div>
           <div class="content">
             <ul class="outer-color">
-              <li :class="{active: state === id}" @click="state = id" v-for="{id, bgColor, itemColor} in colorList" :style="{backgroundColor: bgColor}" :key="id">
+              <li v-for="{id, bgColor, itemColor} in colorList" :class="{active: state === id}" @click="state = id" :style="{backgroundColor: bgColor}" :key="id">
                 <ul class="inner-color">
                   <li v-for="{id: _id, value} in itemColor" :style="{backgroundColor: value}" :key="_id"></li>
                 </ul>

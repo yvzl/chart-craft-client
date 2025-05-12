@@ -6,5 +6,5 @@ export interface IColorItem {
 export interface IColor {
     id: string
     bgColor: string
-    itemColor: Array<IColorItem>
+    itemColor: IColorItem[]
 }

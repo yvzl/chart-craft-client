@@ -5,11 +5,11 @@ export const useModel = <T>(value: T, props: DefineProps<{[key: string]: any}, n
     const data = ref<T>(value) as Ref<T>
     watch(() => props[propsName], newVal => {
         state && (data.value = newVal)
-    }, {deep: true})
+    }, {deep: false})
     watch(data, newVal => {
         state = false
         emits(emitsName, newVal)
         state = true
-    }, {deep: true})
+    }, {deep: false})
     return data
 }

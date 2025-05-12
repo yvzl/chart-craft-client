@@ -6,4 +6,5 @@ export interface IChartType {
 
 export interface IChart extends IChartType {
     date: string
+    typeId: IChartType["id"]
 }

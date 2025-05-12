@@ -15,7 +15,7 @@ const value = useModel(modelValue, props, "modelValue", emits, "update:modelValu
 
 <template>
   <ul class="user-bar">
-    <li @click="value = id" :class="{active: value === id}" v-for="{id, title} in data" :key="id">{{ title }}</li>
+    <li v-for="{id, title} in data" :key="id" @click="value = id" :class="{active: value === id}">{{ title }}</li>
   </ul>
 </template>
 

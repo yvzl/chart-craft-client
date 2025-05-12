@@ -1,5 +1,5 @@
 import type {Ref} from "vue"
-import type {INavBarItem, EventMap, StateMap} from "@/types"
+import type {INavBarItem, Fn} from "@/types"
 import {Search, Delete} from "@icon-park/vue-next"
 
 export const homeBarList: INavBarItem[] = [{
@@ -14,11 +14,13 @@ export const homeBarList: INavBarItem[] = [{
     eventName: "delete",
 }]
 
-export const homeBarEventMap: EventMap = {
-    1(data: Ref<StateMap>, id: string) {
+type StateMap = Record<INavBarItem["id"], boolean>
+
+export const homeBarEventMap: Record<INavBarItem["id"], Fn> = {
+    1(data: Ref<StateMap>, id: INavBarItem["id"]) {
         data.value[id] = !data.value[id]
     },
-    2(data: Ref<StateMap>, id: string) {
+    2(data: Ref<StateMap>, id: INavBarItem["id"]) {
         data.value[id] = !data.value[id]
     },
 }

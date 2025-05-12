@@ -17,7 +17,7 @@ const {height = 0} = defineProps<{
         <div class="box">
           <div class="other-content">
             <ul>
-              <li @click="state = id" :class="{active: state === id}" v-for="{id, name, cover} in chartTypeList" :key="id">
+              <li v-for="{id, name, cover} in chartTypeList" @click="state = id" :class="{active: state === id}" :key="id">
                 <img :src="cover" alt="?"/>
                 <p>{{ name }}</p>
               </li>

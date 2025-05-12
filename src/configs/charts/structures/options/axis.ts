@@ -15,7 +15,7 @@ import {
     rotate,
     margin
 } from "@/configs/charts/structures/subs";
-import {ChartOption, ObjectOption} from "@/types";
+import type {ChartOption, ObjectOption} from "@/types";
 
 const children: ChartOption = {
     show,
