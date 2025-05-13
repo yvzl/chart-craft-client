@@ -1,31 +1,22 @@
 <script setup lang="ts">
-import {useTemplateRef, onMounted, watch, ref, markRaw} from "vue"
+import {useTemplateRef, onMounted, watch, markRaw} from "vue"
 import {debounce} from "@/utils";
 import {storeToRefs} from "pinia";
 import {chartStore} from "@/stores"
 import * as echarts from "echarts"
-import type {EChartsType} from "echarts"
-import {chartToggleMap} from "@/configs";
 
-const {selectChart, chartData, chartMessage} = storeToRefs(chartStore())
-
+const store = chartStore()
+const {selectChart, toggleChart, chartBox} = storeToRefs(store)
 const contentRef = useTemplateRef("content")
-const chart = ref<EChartsType | null>(null);
 
 onMounted(() => {
-  if (!contentRef.value || !selectChart.value || !chartData.value) return
-  chart.value = markRaw(echarts.init(contentRef.value))
-  const id = selectChart.value;
-  const typeId = chartMessage.value[id].typeId;
-  const option = chartData.value[id];
-  const result = chartToggleMap[typeId](option)
-  console.log(result)
-  chart.value.setOption(result, true)
-  window.addEventListener('resize', debounce(() => chart.value?.resize(), 300))
+  if (!contentRef.value || !selectChart.value) return
+  chartBox.value = markRaw(echarts.init(contentRef.value))
+  chartBox.value.setOption(toggleChart.value, true)
+  window.addEventListener('resize', debounce(() => chartBox.value?.resize(), 300))
 })
 
-watch(selectChart, () => chart.value?.resize())
-
+watch(selectChart, () => chartBox.value?.resize())
 </script>
 
 <template>

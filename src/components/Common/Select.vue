@@ -1,18 +1,13 @@
 <script setup lang="ts">
-import {useModel} from "@/hooks";
 import {DownOne} from "@icon-park/vue-next"
-import {ref, useTemplateRef, type Ref} from 'vue'
+import {ref, useTemplateRef} from 'vue'
 
-const props = defineProps<{
+const {modelValue} = defineProps<{
   modelValue: string
   data: Record<string, string>
 }>()
 
-const emits = defineEmits(["update:modelValue"])
-
-const {modelValue} = props
-
-const value: Ref<string> = useModel(modelValue, props, "modelValue", emits, "update:modelValue")
+const value = defineModel<typeof modelValue>()
 
 const state = ref(false)
 const selectRef = useTemplateRef("selectRef")
@@ -27,7 +22,7 @@ window.addEventListener('click', (e: MouseEvent) => {
 <template>
   <div ref="selectRef" class="select" @click="state = !state">
     <div class="content">
-      <div class="value">{{ data[value] }}</div>
+      <div v-if="value" class="value">{{ data[value] }}</div>
       <div class="btn">
         <DownOne theme="filled"/>
       </div>

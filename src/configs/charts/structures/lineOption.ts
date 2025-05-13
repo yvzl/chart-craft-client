@@ -1,8 +1,8 @@
 import {line} from "@/configs/charts/structures/options"
 import {commonOption} from "@/configs/charts/structures"
-import type {ChartOption} from "@/types";
+import type {ChartOptionMap} from "@/types";
 
-export const lineOption: ChartOption = {
+export const lineOption: ChartOptionMap = {
     ...commonOption,
     series: line
 }

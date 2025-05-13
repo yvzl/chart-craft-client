@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type {IChart, IChartBtn} from "@/types"
+import {EntityMap, IChart, IChartBtn} from "@/types"
 
 const {btnList} = defineProps<{
-  data: IChart[],
+  data: EntityMap<IChart>,
   btnList: IChartBtn[],
 }>()
 

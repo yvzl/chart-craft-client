@@ -1,44 +1,52 @@
+@use "@/assets/styles/Variables" as *;
+
 .attr-setting {
+  $margin: 10px;
   display: contents;
-}
 
-@for $i from 0 through 5 {
-  .box#{$i} {
-    font-size: 14px;
-    padding-left: #{($i * 10) + 15}px;
-
-    > .header {
-      margin-top: 10px;
+  @for $i from 0 through 5 {
+    .box1 {
+      padding-bottom: $margin;
+      border-bottom: 1px solid $bg-color1;
+      > .header {
+        font-size: 14px;
+      }
     }
 
-    > .attr-box {
-      padding-left: 0 #{$i * 10}px;
+    .box#{$i} {
+      color: $color5;
+      font-size: 12px;
+      padding-left: #{$i * 10}px;
 
-      > .attr {
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        padding-left: 20%;
+      > .header {
+        margin-top: $margin;
+      }
 
-        > .string {
-          width: 104px;
-        }
+      > .attr-box {
+        padding-left: 0 #{$i * 10}px;
 
-        > .number {
-          width: 90px;
-        }
+        > .attr {
+          margin-top: $margin;
+          display: flex;
+          align-items: center;
+          padding-left: 20%;
 
-        > .boolean {
-          width: 18px;
-          aspect-ratio: 1 / 1;
-        }
+          > .string {
+            width: 104px;
+          }
 
-        > .map {
+          > .number {
+            width: 90px;
+          }
 
-        }
+          > .boolean {
+            width: 18px;
+            aspect-ratio: 1 / 1;
+          }
 
-        > .color {
-          width: 100px;
+          > .color {
+            width: 100px;
+          }
         }
       }
     }

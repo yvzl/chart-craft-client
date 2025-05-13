@@ -1,14 +1,10 @@
 <script setup lang="ts">
-import {useModel} from "@/hooks";
-
-const props = defineProps<{
+const {placeholder = "", modelValue} = defineProps<{
   modelValue: string,
   placeholder?: string,
 }>()
 
-const {modelValue, placeholder = ""} = props
-const emits = defineEmits(["update:modelValue"])
-const value = useModel(modelValue, props, "modelValue", emits, "update:modelValue")
+const value = defineModel<typeof modelValue>()
 </script>
 
 <template>

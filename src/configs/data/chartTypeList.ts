@@ -1,5 +1,5 @@
 import {barOption, pieOption, lineOption} from "@/configs"
-import {ChartOption, IChartType, IBarTemplate, IPieTemplate, ILineTemplate} from "@/types";
+import {ChartOptionMap, IChartType, IBarTemplate, IPieTemplate, ILineTemplate, IMaxDimension} from "@/types";
 import pieImg from "@/assets/images/chart_types/pie.png"
 import barImg from "@/assets/images/chart_types/bar.png"
 import lineImg from "@/assets/images/chart_types/line.png"
@@ -19,7 +19,7 @@ export const chartTypeList: IChartType[] = [{
     cover: lineImg
 }]
 
-export const chartTypeMap: Record<IChartType["id"], ChartOption> = {
+export const chartTypeMap: Record<IChartType["id"], ChartOptionMap> = {
     1: barOption,
     2: pieOption,
     3: lineOption,
@@ -29,7 +29,7 @@ export const chartToggleMap: Record<IChartType["id"], (data: any) => EChartsOpti
     1(_: IPieTemplate): EChartsOption {
         return {}
     },
-    2({seriesData, xData, option, yData, colorData}: IBarTemplate): EChartsOption {
+    2({seriesData, xData, option, yData, colorData, bgColor}: IBarTemplate): EChartsOption {
         return JSON.parse(JSON.stringify({
             ...option,
             color: colorData,
@@ -46,9 +46,37 @@ export const chartToggleMap: Record<IChartType["id"], (data: any) => EChartsOpti
                 ...option.legend,
                 data: yData
             },
+            backgroundColor: bgColor
         }))
     },
     3(_: ILineTemplate): EChartsOption {
         return {}
+    }
+}
+
+export const chartDataToggle: Record<IChartType["id"], (data: any) => number[][]> = {
+    1(data: IPieTemplate["seriesData"]): number[][] {
+        return [data.map(item => item.value)]
+    },
+    2(data: IBarTemplate["seriesData"]): number[][] {
+        return data
+    },
+    3(data: ILineTemplate["seriesData"]): number[][] {
+        return data
+    }
+}
+
+export const chartMaxDimension: Record<IChartType["id"], IMaxDimension> = {
+    1: {
+        maxCols: 8,
+        maxRows: 3
+    },
+    2: {
+        maxCols: 8,
+        maxRows: 8
+    },
+    3: {
+        maxCols: 8,
+        maxRows: 8
     }
 }

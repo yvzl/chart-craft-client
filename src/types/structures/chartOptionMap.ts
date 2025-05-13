@@ -31,7 +31,9 @@ export type MapOption = {
 export type ObjectOption = {
     name: string,
     type: "object",
-    children: ChartOption
+    children: ChartOptionMap
 }
 
-export type ChartOption = Partial<Record<keyof EChartsOption, NumberOption | StringOption | BooleanOption | MapOption | ColorOption | ObjectOption>>
+export type ChartOption = NumberOption | StringOption | BooleanOption | MapOption | ColorOption | ObjectOption
+
+export type ChartOptionMap = Partial<Record<keyof EChartsOption, ChartOption>>

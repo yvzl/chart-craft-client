@@ -1,12 +1,37 @@
 <script setup lang="ts">
+import {ref} from 'vue'
+import {chartStore} from "@/stores";
+import {storeToRefs} from "pinia";
 import Scroll from "@/components/Common/Scroll.vue";
 import Submit from "@/components/Common/Submit.vue";
+import {chartDataToggle, chartMaxDimension} from "@/configs";
 
 const {height = 0} = defineProps<{
   height?: number
 }>()
 
-const colArr = " ABCDEFGH"
+const store = chartStore()
+
+const {selectChart, chartData, chartMessage, chartBox, toggleChart} = storeToRefs(store)
+
+const seriesData = ref<number[][]>([[]])
+const xData = ref<string[]>([])
+const yData = ref<string[]>([])
+const maxRows = ref(0)
+const maxCols = ref(0)
+
+if (selectChart.value) {
+  const {seriesData: a, xData: b, yData: c} = chartData.value[selectChart.value]
+  const typeId = chartMessage.value[selectChart.value].typeId
+  const {maxRows: r, maxCols: l} = chartMaxDimension[typeId]
+  seriesData.value = chartDataToggle[typeId](a)
+  xData.value = b
+  yData.value = c
+  maxRows.value = r
+  maxCols.value = l
+}
+
+const colArr = "ABCDEFGH"
 </script>
 
 <template>
@@ -17,18 +42,19 @@ const colArr = " ABCDEFGH"
           <div class="other-content">
             <div class="table-outer">
               <table>
-                <tr v-for="(item, i) in 21" :key="i">
+                <tr v-for="(_, i) in maxRows" :key="i">
                   <template v-if="i === 0">
-                    <th class="col" v-for="value in colArr">
-                      <div>{{ value }}</div>
+                    <th class="col"></th>
+                    <th class="col" v-for="(_, j) in maxCols">
+                      <input v-model="xData[j]"/>
                     </th>
                   </template>
                   <template v-else>
                     <th :style="{borderTop: i === 1 ? 'none' : '1px solid #ccc'}" class="row">
-                      <div>{{ item - 1 }}</div>
+                      <input v-model="yData[i - 1]"/>
                     </th>
-                    <td :style="{borderTop: i === 1 ? 'none' : '1px solid #ccc'}" v-for="() in colArr.length">
-                      <input/>
+                    <td :style="{borderTop: i === 1 ? 'none' : '1px solid #ccc'}" v-for="(_, j) in colArr.length">
+                      <input type="number" v-model="seriesData[i - 1][j]"/>
                     </td>
                   </template>
                 </tr>
@@ -37,7 +63,7 @@ const colArr = " ABCDEFGH"
             <div class="btn-list">
               <Submit value="导出数据"/>
               <Submit type="primary" value="导入数据"/>
-              <Submit value="确认"/>
+              <Submit v-if="chartBox" @click="chartBox.setOption(toggleChart, true)" value="确认"/>
             </div>
           </div>
         </div>

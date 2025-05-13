@@ -1,3 +1,4 @@
+import {userStore} from "@/stores"
 import type {IUserAction, Fn} from "@/types";
 import router from "@/router";
 
@@ -18,6 +19,10 @@ export const userActionsEventMap: Record<IUserAction["id"], Fn> = {
         }).then()
     },
     2() {
-
+        const {changeState} = userStore()
+        changeState(null)
+        router.push({
+            name: "Authentication",
+        }).then()
     },
 }

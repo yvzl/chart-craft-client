@@ -1,16 +1,11 @@
 <script setup lang="ts">
-import {useModel} from "@/hooks";
 import TextInput from "@/components/Common/TextInput.vue";
 
-const props = defineProps<{
+const {modelValue} = defineProps<{
   modelValue: string;
 }>()
 
-const {modelValue} = props
-
-const emits = defineEmits(["update:modelValue"]);
-
-const value = useModel(modelValue, props, "modelValue", emits, "update:modelValue");
+const value = defineModel<typeof modelValue>()
 </script>
 
 <template>

@@ -25,8 +25,11 @@ export const userStore = defineStore("userStore", () => {
 
     const userState = ref<IUser["id"] | null>("1")
 
+    const changeState = (val: typeof userState.value) => userState.value = val
+
     return {
         userList,
-        userState
+        userState,
+        changeState
     }
 })

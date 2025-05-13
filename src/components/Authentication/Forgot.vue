@@ -1,21 +1,16 @@
 <script setup lang="ts">
 import {ref} from 'vue';
-import {useModel} from "@/hooks";
 import Submit from "@/components/Common/Submit.vue";
 import CheckCodeOuter from "@/components/Authentication/CheckCodeOuter.vue";
 import AuthenticationInput from "@/components/Authentication/AuthenticationInput.vue";
 import CheckEmailCodeOuter from "@/components/Authentication/CheckEmailCodeOuter.vue";
 import AuthenticationInputPassword from "@/components/Authentication/AuthenticationInputPassword.vue";
 
-const props = defineProps<{
+const {modelValue} = defineProps<{
   modelValue: boolean
 }>()
 
-const emits = defineEmits(['update:modelValue']);
-
-const {modelValue} = props
-
-const state = useModel(modelValue, props, "modelValue", emits, "update:modelValue");
+const state = defineModel<typeof modelValue>()
 
 const email = ref("");
 const password = ref("");

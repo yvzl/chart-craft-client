@@ -1,16 +1,12 @@
 <script setup lang="ts">
-import {useModel} from "@/hooks";
 import type {IUserBar} from "@/types";
 
-const props = defineProps<{
+const {modelValue} = defineProps<{
   data: IUserBar[],
   modelValue: IUserBar["id"]
 }>()
 
-const {modelValue} = props
-const emits = defineEmits(["update:modelValue"]);
-
-const value = useModel(modelValue, props, "modelValue", emits, "update:modelValue")
+const value = defineModel<typeof modelValue>()
 </script>
 
 <template>

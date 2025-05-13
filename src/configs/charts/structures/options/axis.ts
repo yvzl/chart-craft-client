@@ -15,9 +15,9 @@ import {
     rotate,
     margin
 } from "@/configs/charts/structures/subs";
-import type {ChartOption, ObjectOption} from "@/types";
+import type {ChartOptionMap, ObjectOption} from "@/types";
 
-const children: ChartOption = {
+const children: ChartOptionMap = {
     show,
     offset: {
         name: "偏移度",

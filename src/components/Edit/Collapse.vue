@@ -1,16 +1,12 @@
 <script setup lang="ts">
-import {useModel} from "@/hooks";
 import {Right, Down} from "@icon-park/vue-next"
 import type {ICollapseItem} from "@/types";
 import {nextTick, onMounted, ref, useTemplateRef} from "vue";
 
-const props = defineProps<{
+const {modelValue} = defineProps<{
   modelValue: ICollapseItem["id"],
   data: ICollapseItem[]
 }>()
-
-const {modelValue} = props
-const emits = defineEmits(['update:modelValue']);
 
 const height = ref(0)
 const ulRef = useTemplateRef("ulRef");
@@ -30,7 +26,7 @@ window.addEventListener("resize", () => {
   nextTick(computedH)
 })
 
-const state = useModel(modelValue, props, "modelValue", emits, "update:modelValue");
+const state = defineModel<typeof modelValue>()
 </script>
 
 <template>

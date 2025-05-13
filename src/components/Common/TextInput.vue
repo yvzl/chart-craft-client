@@ -1,20 +1,14 @@
 <script setup lang="ts">
-import {useModel} from "@/hooks";
-
-const props = defineProps<{
+const {modelValue} = defineProps<{
   modelValue: string
 }>()
 
-const {modelValue} = props
-
-const emits = defineEmits(['update:modelValue'])
-
-const value = useModel(modelValue, props, "modelValue", emits, "update:modelValue")
+const value = defineModel<typeof modelValue>()
 </script>
 
 <template>
   <div class="text-input">
-    <input type="text" v-model="value" />
+    <input type="text" v-model="value"/>
     <slot></slot>
   </div>
 </template>

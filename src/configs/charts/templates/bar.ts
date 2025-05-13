@@ -5,21 +5,6 @@ export const barTemplate: IBarTemplate = {
         title: {
             show: true,
             text: "柱形图",
-            textStyle: {
-                color: "#068ccfff",
-                fontStyle: "normal",
-                fontWeight: 900,
-                fontFamily: "sans-serif",
-                fontSize: 16,
-            },
-            subtext: "",
-            subtextStyle: {
-                color: "#aaa",
-                fontStyle: "normal",
-                fontWeight: 500,
-                fontFamily: "sans-serif",
-                fontSize: 14
-            },
             textAlign: "center",
             textVerticalAlign: "top",
             itemGap: 10,
@@ -27,6 +12,21 @@ export const barTemplate: IBarTemplate = {
             bottom: "0",
             left: "50%",
             right: "50%",
+            subtext: "",
+            textStyle: {
+                color: "#068ccfff",
+                fontStyle: "normal",
+                fontWeight: 900,
+                fontFamily: "sans-serif",
+                fontSize: 16,
+            },
+            subtextStyle: {
+                color: "#aaa",
+                fontStyle: "normal",
+                fontWeight: 500,
+                fontFamily: "sans-serif",
+                fontSize: 14
+            },
         },
         xAxis: {
             type: "category",
@@ -34,6 +34,11 @@ export const barTemplate: IBarTemplate = {
             offset: 0,
             name: "",
             nameLocation: "end",
+            nameGap: 15,
+            nameRotate: 0,
+            inverse: false,
+            min: "dataMin",
+            max: "dataMax",
             nameTextStyle: {
                 color: "#333",
                 fontStyle: "normal",
@@ -43,11 +48,6 @@ export const barTemplate: IBarTemplate = {
                 align: "center",
                 verticalAlign: "middle"
             },
-            nameGap: 15,
-            nameRotate: 0,
-            inverse: false,
-            min: "dataMin",
-            max: "dataMax",
             axisLine: {
                 show: true,
                 symbol: "none",
@@ -129,6 +129,11 @@ export const barTemplate: IBarTemplate = {
             offset: 0,
             name: "",
             nameLocation: "end",
+            nameGap: 15,
+            nameRotate: 0,
+            inverse: false,
+            min: "dataMin",
+            max: "dataMax",
             nameTextStyle: {
                 color: "#333",
                 fontStyle: "normal",
@@ -138,11 +143,6 @@ export const barTemplate: IBarTemplate = {
                 align: "center",
                 verticalAlign: "middle"
             },
-            nameGap: 15,
-            nameRotate: 0,
-            inverse: false,
-            min: "dataMin",
-            max: "dataMax",
             axisLine: {
                 show: true,
                 symbol: "none",
@@ -226,20 +226,21 @@ export const barTemplate: IBarTemplate = {
         legend: {
             show: true,
             type: "scroll",
-            top: "95%",
+            top: "97%",
             bottom: "0",
-            left: "35%",
-            right: "25%",
+            left: "center",
+            right: "0",
             orient: "horizontal",
             align: "left",
             itemGap: 10,
             itemWidth: 25,
             itemHeight: 14,
+            symbolRotate: 0,
+            selectedMode: true,
+            icon: "roundRect",
             itemStyle: {
                 opacity: 1
             },
-            symbolRotate: 0,
-            selectedMode: true,
             textStyle: {
                 color: "#333",
                 fontStyle: "normal",
@@ -247,7 +248,6 @@ export const barTemplate: IBarTemplate = {
                 fontFamily: "sans-serif",
                 fontSize: 12
             },
-            icon: "roundRect",
         },
         tooltip: {
             show: true,
@@ -260,6 +260,7 @@ export const barTemplate: IBarTemplate = {
             backgroundColor: "rgba(50,50,50,0.7)",
             borderColor: "#333",
             borderWidth: 0,
+            transitionDuration: 0.4,
             textStyle: {
                 color: "#fff",
                 fontStyle: "normal",
@@ -267,7 +268,6 @@ export const barTemplate: IBarTemplate = {
                 fontFamily: "sans-serif",
                 fontSize: 14,
             },
-            transitionDuration: 0.4
         },
         series: {
             type: "bar",
@@ -296,13 +296,14 @@ export const barTemplate: IBarTemplate = {
     xData: ["图书", "家居厨具", "家用电器", "手机数码", "服装箱包", "汽车用品", "电脑办公", "运动户外"],
     yData: ["东北", "华东", "华中", "华北", "华南", "西北", "西南"],
     seriesData: [
-        [522, 1566, 329, 1528, 337, 229, 710],
-        [1036, 3031, 593, 4176, 525, 611, 1221],
-        [1042, 3372, 633, 4441, 711, 515, 1231],
-        [744, 2607, 446, 3322, 795, 495, 986],
-        [647, 1189, 267, 2081, 376, 444, 550],
-        [537, 2081, 343, 2059, 378, 215, 753],
-        [1113, 3031, 422, 3494, 598, 269, 857]
+        [522, 1566, 329, 1528, 337, 229, 710, 257],
+        [1036, 3031, 593, 4176, 525, 611, 1221, 1321],
+        [1042, 3372, 633, 4441, 711, 515, 1231, 265],
+        [744, 2607, 446, 3322, 795, 495, 986, 1152],
+        [647, 1189, 267, 2081, 376, 444, 550, 330],
+        [537, 2081, 343, 2059, 378, 215, 753, 207],
+        [1113, 3031, 422, 3494, 598, 269, 857, 233],
     ],
-    colorData: ["#ff7f50", "#87cefa", "#da70d5", "#32cd33", "#6395ec", "#6395ec", "#ba56d4", "#cd5d5c"]
+    colorData: ["#ff7f50", "#87cefa", "#da70d5", "#32cd33", "#6395ec", "#6395ec", "#ba56d4", "#cd5d5c"],
+    bgColor: "#f7f7f7ff"
 }

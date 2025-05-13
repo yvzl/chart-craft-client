@@ -1,8 +1,8 @@
 import {bar} from "@/configs/charts/structures/options"
 import {commonOption} from "@/configs/charts/structures"
-import type {ChartOption} from "@/types";
+import type {ChartOptionMap} from "@/types";
 
-export const barOption: ChartOption = {
+export const barOption: ChartOptionMap = {
     ...commonOption,
     series: bar
 }

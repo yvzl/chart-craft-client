@@ -1,17 +1,13 @@
 <script setup lang="ts">
-import {useModel} from "@/hooks";
 import CheckEmailCode from "@/components/Authentication/CheckEmailCode.vue";
 import AuthenticationInput from "@/components/Authentication/AuthenticationInput.vue";
 
-const props = defineProps<{
+const {modelValue} = defineProps<{
   modelValue: string
   cd?: number
 }>()
 
-const {modelValue} = props
-
-const emits = defineEmits(['update:modelValue']);
-const value = useModel(modelValue, props, "modelValue", emits, "update:modelValue")
+const value = defineModel<typeof modelValue>()
 </script>
 
 <template>

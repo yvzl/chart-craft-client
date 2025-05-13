@@ -1,7 +1,7 @@
 import {xAxis, yAxis, grid, legend, title, tooltip} from "@/configs/charts/structures/options"
-import type {ChartOption} from "@/types";
+import type {ChartOptionMap} from "@/types";
 
-export const commonOption: ChartOption = {
+export const commonOption: ChartOptionMap = {
     xAxis: xAxis,
     yAxis: yAxis,
     grid,

@@ -1,17 +1,14 @@
 <script setup lang="ts">
 import {ref} from 'vue';
-import {useModel} from "@/hooks";
 import {PreviewOpen, PreviewCloseOne} from "@icon-park/vue-next"
 
-const props = defineProps<{
+const {placeholder = "", classList = [], modelValue} = defineProps<{
   modelValue: string
   placeholder?: string
   classList?: string[]
 }>()
 
-const {modelValue, placeholder = "", classList = []} = props
-const emits = defineEmits(["update:modelValue"])
-const value = useModel(modelValue, props, "modelValue", emits, "update:modelValue")
+const value = defineModel<typeof modelValue>()
 const state = ref(false)
 </script>
 
