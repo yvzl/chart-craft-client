@@ -82,6 +82,8 @@ $table-color2: #222;
       }
 
       .btn-list {
+        justify-content: center;
+        width: 100%;
         display: flex;
         gap: 20px;
         font-size: 14px;

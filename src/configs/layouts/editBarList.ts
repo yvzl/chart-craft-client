@@ -2,6 +2,7 @@ import router from "@/router";
 import type {Ref} from "vue"
 import type {Fn, INavBarItem} from "@/types"
 import {PlayOne, Save, SaveOne, ShareThree, ShareOne, Return} from "@icon-park/vue-next"
+import {useConfirm, useMessage} from "@/hooks";
 
 export const editBarList: INavBarItem[] = [{
     id: "1",
@@ -22,7 +23,7 @@ export const editBarList: INavBarItem[] = [{
     id: "4",
     name: "导出为",
     icon: ShareThree,
-    eventName: "otherSave",
+    eventName: "exportSave",
 }, {
     id: "5",
     name: "分享",
@@ -42,7 +43,7 @@ export const editBarEventMap: Record<INavBarItem["id"], Fn> = {
 
     },
     2(_: Ref<StateMap>, __: string) {
-
+        useMessage("success", "保存成功")
     },
     3(_: Ref<StateMap>, __: string) {
 
@@ -51,7 +52,11 @@ export const editBarEventMap: Record<INavBarItem["id"], Fn> = {
 
     },
     5(_: Ref<StateMap>, __: string) {
-
+        useConfirm("确定要离开吗？未保存的更改将丢失。", () => {
+            console.log(1)
+        }, () => {
+            console.log(2)
+        })
     },
     6(_: Ref<StateMap>, __: string) {
         router.push({

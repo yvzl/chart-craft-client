@@ -21,7 +21,7 @@ const emits = defineEmits();
         <ul class="mask">
           <li v-for="({id: key, name, icon, eventName}) in btnList" :key="key" @click="emits(eventName, id)">
             <div class="icon-outer">
-              <component :is="icon"/>
+              <Component :is="icon"/>
             </div>
             <p>{{ name }}</p>
           </li>

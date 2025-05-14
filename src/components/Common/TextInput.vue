@@ -8,8 +8,10 @@ const value = defineModel<typeof modelValue>()
 
 <template>
   <div class="text-input">
-    <input type="text" v-model="value"/>
-    <slot></slot>
+    <template v-if="value !== void 0">
+      <input type="text" v-model="value"/>
+      <slot></slot>
+    </template>
   </div>
 </template>
 

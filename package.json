@@ -18,6 +18,7 @@
     "pinia-plugin-persistedstate": "^4.2.0",
     "sass": "^1.86.3",
     "ts-node": "^10.9.2",
+    "vite-plugin-vue-type-imports": "^0.2.5",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },

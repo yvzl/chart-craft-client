@@ -13,7 +13,9 @@ defineProps<{
       <p>{{ tips }}</p>
     </div>
     <div class="btn">
-      <Upload theme="filled"/>
+      <div class="icon">
+        <Upload theme="filled"/>
+      </div>
       <span>选择文件</span>
     </div>
   </div>

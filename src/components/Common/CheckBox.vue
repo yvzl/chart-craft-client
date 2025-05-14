@@ -8,7 +8,7 @@ const value = defineModel<typeof modelValue>()
 
 <template>
   <div class="check-box">
-    <label>
+    <label v-if="value !== void 0">
       <input v-model="value" type="checkbox"/>
       <span>✔</span>
     </label>

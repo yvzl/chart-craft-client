@@ -1,0 +1,78 @@
+@use "@/assets/styles/Variables" as *;
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: $bg-color6;
+  opacity: 0.8;
+  z-index: 99;
+}
+
+.modal-main {
+  width: 500px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+  z-index: 100;
+  border-radius: 3px;
+  overflow: hidden;
+
+  > .box {
+    padding: 15px;
+  }
+
+  > .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color5;
+    background-color: $bg-color1;
+
+    > .close {
+      display: contents;
+      font-size: 22px;
+      cursor: pointer;
+    }
+  }
+
+  > .content {
+    background-color: $color3;
+    color: $color8;
+
+    > p {
+      padding: 10px;
+    }
+  }
+
+  > .footer {
+    display: flex;
+    background-color: $color3;
+    border-top: 1px solid $color7;
+    justify-content: flex-end;
+    gap: 10px;
+
+    > .btn {
+      width: 68px;
+      font-size: 14px;
+
+      > .s-btn {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}

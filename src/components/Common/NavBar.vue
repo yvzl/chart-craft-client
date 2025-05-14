@@ -26,7 +26,7 @@ watch(() => barList, () => resetMap(), {immediate: true});
   <div class="nav-bar">
     <ul>
       <li v-for="{id, icon, name, eventName} in barList" @click="handleClick(id, eventName)" :class="{'nav-bar-item': true, active: stateMap[id]}" :key="id">
-        <component :is="icon"/>
+        <Component :is="icon"/>
         <span>{{ name }}</span>
       </li>
     </ul>

@@ -21,15 +21,19 @@ window.addEventListener('click', (e: MouseEvent) => {
 
 <template>
   <div ref="selectRef" class="select" @click="state = !state">
-    <div class="content">
-      <div v-if="value" class="value">{{ data[value] }}</div>
-      <div class="btn">
-        <DownOne theme="filled"/>
+    <template v-if="value !== void 0">
+      <div class="content">
+        <div class="value">{{ data[value] }}</div>
+        <div class="btn">
+          <div class="icon">
+            <DownOne theme="filled"/>
+          </div>
+        </div>
       </div>
-    </div>
-    <ul v-if="state">
-      <li @click="value = id" v-for="(item, id) of data" :key="id">{{ item }}</li>
-    </ul>
+      <ul v-if="state">
+        <li @click="value = id" v-for="(item, id) of data" :key="id">{{ item }}</li>
+      </ul>
+    </template>
   </div>
 </template>
 

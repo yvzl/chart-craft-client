@@ -15,7 +15,6 @@ const newVal = ref<number>(min)
 
 const handleChange = () => {
   const val = value.value
-  console.log(value.value)
   if (val === void 0) return
   if (typeof val === "string" || val < min + step - 1) {
     value.value = min
@@ -42,15 +41,21 @@ watch(value, newVal_ => typeof newVal_ === "number" && newVal_ >= min && newVal_
 
 <template>
   <div class="number-input">
-    <input @change="handleChange" v-model="value" type="number"/>
-    <div class="arrow">
-      <div @click="add" class="up">
-        <UpOne theme="filled"/>
+    <template v-if="value !== void 0">
+      <input @change="handleChange" v-model="value" type="number"/>
+      <div class="arrow">
+        <div @click="add" class="up btn">
+          <div class="icon">
+            <UpOne theme="filled"/>
+          </div>
+        </div>
+        <div @click="remove" class="down btn">
+          <div class="icon">
+            <DownOne theme="filled"/>
+          </div>
+        </div>
       </div>
-      <div @click="remove" class="down">
-        <DownOne theme="filled"/>
-      </div>
-    </div>
+    </template>
   </div>
 </template>
 

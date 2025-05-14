@@ -61,9 +61,15 @@ const colArr = "ABCDEFGH"
               </table>
             </div>
             <div class="btn-list">
-              <Submit value="导出数据"/>
-              <Submit type="primary" value="导入数据"/>
-              <Submit v-if="chartBox" @click="chartBox.setOption(toggleChart, true)" value="确认"/>
+              <div class="btn">
+                <Submit value="导出数据"/>
+              </div>
+              <div class="btn">
+                <Submit type="primary" value="导入数据"/>
+              </div>
+              <div v-if="chartBox !== null" class="btn">
+                <Submit @click="chartBox.setOption(toggleChart, true)" value="确认"/>
+              </div>
             </div>
           </div>
         </div>

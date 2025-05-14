@@ -28,7 +28,9 @@ watch(currentOption, () => {
   <div class="attr-setting">
     <Scroll :height="height">
       <div class="attr-setting-main">
-        <AttrBox v-if="selectChart" v-model="currentOption" :option="chartTypeMap[selectChart]"/>
+        <template v-if="selectChart !== null">
+          <AttrBox v-model="currentOption" :option="chartTypeMap[selectChart]"/>
+        </template>
       </div>
     </Scroll>
   </div>

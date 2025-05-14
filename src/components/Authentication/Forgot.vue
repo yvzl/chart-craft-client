@@ -37,7 +37,9 @@ const emailCode = ref("")
     <div class="register-btn">
       <Submit type="primary" :classList="['btn']" value="重置密码"/>
     </div>
-    <div class="return-btn" @click="state = true">返回登录页面</div>
+    <template v-if="state !== void 0">
+      <div class="return-btn" @click="state = true">返回登录页面</div>
+    </template>
   </form>
 </template>
 

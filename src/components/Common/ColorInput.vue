@@ -10,9 +10,11 @@ const value = defineModel<typeof modelValue>()
 
 <template>
   <div class="color-input">
-    <TextInput v-model="value">
-      <div :style="{backgroundColor: value}" class="color-box"></div>
-    </TextInput>
+    <template v-if="value !== void 0">
+      <TextInput v-model="value">
+        <div :style="{backgroundColor: value}" class="color-box"></div>
+      </TextInput>
+    </template>
   </div>
 </template>
 

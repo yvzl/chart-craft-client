@@ -10,9 +10,11 @@ const value = defineModel<typeof modelValue>()
 </script>
 
 <template>
-  <ul class="user-bar">
-    <li v-for="{id, title} in data" :key="id" @click="value = id" :class="{active: value === id}">{{ title }}</li>
-  </ul>
+  <div class="user-bar">
+    <ul v-if="value">
+      <li v-for="{id, title} in data" :key="id" @click="value = id" :class="{active: value === id}">{{ title }}</li>
+    </ul>
+  </div>
 </template>
 
 <style scoped lang="scss">

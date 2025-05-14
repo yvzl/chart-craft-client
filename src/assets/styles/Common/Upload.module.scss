@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $bg-color5;
+    background-color: $bg-color1;
 
     > p {
       width: 90%;
@@ -30,7 +30,12 @@
     justify-content: center;
     width: 85px;
     height: 100%;
-    background-color: $bg-color7;
+    background-color: $bg-color5;
     gap: 6px;
+
+    > .icon {
+      display: contents;
+      font-size: 14px;
+    }
   }
 }

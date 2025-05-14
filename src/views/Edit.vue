@@ -7,13 +7,12 @@ import Header from "@/components/Common/Header.vue";
 import NavBar from "@/components/Common/NavBar.vue";
 import Collapse from "@/components/Edit/Collapse.vue";
 import ChartView from "@/components/Edit/ChartView.vue";
+import Modal from "@/components/Common/Modal.vue";
 
 const route = useRoute()
 
 if (route.name === 'Create') {
-
 } else {
-
 }
 
 const state = ref("1")

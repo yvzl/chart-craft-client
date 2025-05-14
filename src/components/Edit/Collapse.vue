@@ -9,13 +9,13 @@ const {modelValue} = defineProps<{
 }>()
 
 const height = ref(0)
-const ulRef = useTemplateRef("ulRef");
+const collapseRef = useTemplateRef("collapseRef");
 const headerRef = useTemplateRef<HTMLElement[]>("headerRef");
 
 const computedH = () => {
-  const ulH = ulRef.value?.clientHeight;
+  const ulH = collapseRef.value?.clientHeight;
   const headerList = headerRef.value
-  if(!headerList?.length || !ulH) return
+  if (!headerList?.length || !ulH) return
   height.value = ulH - headerList[0].clientHeight * headerList.length
 }
 
@@ -30,24 +30,28 @@ const state = defineModel<typeof modelValue>()
 </script>
 
 <template>
-  <ul ref="ulRef" class="collapse">
-    <li v-for="{id, title, content} in data" :key="id">
-      <div ref="headerRef" @click="state = id" class="header">
-        <p>{{ title }}</p>
-        <div class="icon">
-          <Down v-if="id === state"/>
-          <Right v-else/>
-        </div>
-      </div>
-      <div class="main">
-        <transition>
-          <div v-if="id === state" class="transition" :style="{maxHeight: `${height}px`}">
-            <component :height="height" :is="content"/>
+  <div ref="collapseRef" class="collapse">
+    <ul v-if="state !== void 0">
+      <li v-for="{id, title, content} in data" :key="id">
+        <div ref="headerRef" @click="state = id" class="header">
+          <p>{{ title }}</p>
+          <div class="icon">
+            <Down v-if="id === state"/>
+            <Right v-else/>
           </div>
-        </transition>
-      </div>
-    </li>
-  </ul>
+        </div>
+        <div class="main">
+          <transition>
+            <template v-if="id === state">
+              <div class="transition" :style="{maxHeight: `${height}px`}">
+                <Component :height="height" :is="content"/>
+              </div>
+            </template>
+          </transition>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style scoped lang="scss">

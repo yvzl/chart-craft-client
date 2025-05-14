@@ -6,35 +6,38 @@
   background-color: $bg-color1;
   overflow: hidden;
 
-  > li {
-    color: $color2;
+  > ul {
+    > li {
+      color: $color2;
 
-    > .header {
-      cursor: pointer;
-      height: 35px;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 15px;
-      background-color: $bg-color5;
+      > .header {
+        cursor: pointer;
+        height: 35px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px;
+        background-color: $bg-color1;
 
-      > .icon {
-        font-size: 18px;
-      }
-    }
-
-    > .main {
-      background-color: $bg-color6;
-      height: 100%;
-
-      > .v-enter-active, > .v-leave-active {
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
+        > .icon {
+          display: contents;
+          font-size: 18px;
+        }
       }
 
-      > .v-enter-from, > .v-leave-to {
-        max-height: 0 !important;
+      > .main {
+        background-color: $bg-color4;
+        height: 100%;
+
+        > .v-enter-active, > .v-leave-active {
+          overflow: hidden;
+          transition: max-height 0.3s ease-in-out;
+        }
+
+        > .v-enter-from, > .v-leave-to {
+          max-height: 0 !important;
+        }
       }
     }
   }

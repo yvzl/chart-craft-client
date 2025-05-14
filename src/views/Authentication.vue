@@ -26,7 +26,9 @@ const state2 = ref(true)
               <li :class="{active: !state2}" @click="state2 = false">注册</li>
             </ul>
             <div class="main">
-              <Login v-model="state" v-if="state2"/>
+              <template v-if="state2">
+                <Login v-model="state"/>
+              </template>
               <Register v-else/>
             </div>
           </div>

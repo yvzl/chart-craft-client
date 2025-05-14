@@ -12,10 +12,12 @@ const value = defineModel<typeof modelValue>()
 
 <template>
   <div class="check-code-outer">
-    <div class="input">
-      <AuthenticationInput v-model="value" :placeholder="placeholder"/>
-    </div>
-    <CheckCode :classList="['code']"/>
+    <template v-if="value !== void 0">
+      <div class="input">
+        <AuthenticationInput v-model="value" :placeholder="placeholder"/>
+      </div>
+      <CheckCode :classList="['code']"/>
+    </template>
   </div>
 </template>
 

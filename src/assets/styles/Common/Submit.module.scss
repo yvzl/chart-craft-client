@@ -1,6 +1,7 @@
 @use "@/assets/styles/Variables" as *;
 
 .authentication-button {
+  text-align: center;
   display: inline-block;
   border-radius: 2px;
   cursor: pointer;
@@ -10,6 +11,7 @@
 .default {
   color: $color4;
   background-color: $color3;
+  border: 1px solid $color7;
 }
 
 .primary {

@@ -25,7 +25,7 @@ const userActionsListEmits = mapEvent(userActions, userActionsEventMap)
       <div class="content">
         <div class="content-main">
           <UserBar :data="userBarList" v-model="state"/>
-          <component :is="userBatListMap[state]"/>
+          <Component :is="userBatListMap[state]"/>
         </div>
       </div>
     </div>

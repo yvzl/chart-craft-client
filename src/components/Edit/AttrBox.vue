@@ -18,7 +18,7 @@ const data = defineModel<typeof modelValue>()
 
 <template>
   <div class="attr-box">
-    <template v-if="data">
+    <template v-if="data !== void 0">
       <template v-for="(_, key) in data">
         <template v-if="option[key] && data[key] !== void 0">
           <template v-if="option[key].type === 'object' && typeof data[key] === 'object'">

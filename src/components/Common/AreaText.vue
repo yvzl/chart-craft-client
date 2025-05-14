@@ -9,7 +9,9 @@ const value = defineModel<typeof modelValue>()
 
 <template>
   <div class="area-text">
-    <textarea v-model="value" :rows="rows"/>
+    <template v-if="value !== void 0">
+      <textarea v-model="value" :rows="rows"/>
+    </template>
   </div>
 </template>
 

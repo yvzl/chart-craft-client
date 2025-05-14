@@ -28,16 +28,20 @@ const login = () => {
 </script>
 
 <template>
-  <form class="login">
-    <AuthenticationInput v-model="email" placeholder="邮箱"/>
-    <div class="input">
-      <AuthenticationInputPassword v-model="password" placeholder="密码"/>
-    </div>
-    <div @click="value = false" class="forgot">忘记密码</div>
-    <div class="login-btn">
-      <Submit @click="login" type="primary" :classList="['btn']" value="登录"/>
-    </div>
-  </form>
+  <div class="login">
+    <form>
+      <AuthenticationInput v-model="email" placeholder="邮箱"/>
+      <div class="input">
+        <AuthenticationInputPassword v-model="password" placeholder="密码"/>
+      </div>
+      <template v-if="value !== void 0">
+        <div @click="value = false" class="forgot">忘记密码</div>
+      </template>
+      <div class="login-btn">
+        <Submit @click="login" type="primary" :classList="['btn']" value="登录"/>
+      </div>
+    </form>
+  </div>
 </template>
 
 <style scoped lang="scss">

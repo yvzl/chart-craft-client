@@ -2,23 +2,25 @@
 @use "@/assets/styles/Mixins" as *;
 
 .login {
-  > .input {
-    margin-top: 20px;
-  }
+  > form {
+    > .input {
+      margin-top: 20px;
+    }
 
-  > .forgot {
-    text-align: right;
-    margin-top: 10px;
-    cursor: pointer;
-    color: $color1;
-    font-size: 14px;
-  }
+    > .forgot {
+      text-align: right;
+      margin-top: 10px;
+      cursor: pointer;
+      color: $color1;
+      font-size: 14px;
+    }
 
-  > .login-btn {
-    margin-top: 18px;
+    > .login-btn {
+      margin-top: 18px;
 
-    > .btn {
-      @include form-submit;
+      > .btn {
+        @include form-submit;
+      }
     }
   }
 }
