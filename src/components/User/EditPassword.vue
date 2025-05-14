@@ -11,14 +11,14 @@ const reP = ref("")
   <div class="edit-password">
     <div class="box">
       <p>新密码</p>
-      <AuthenticationInputPassword :classList="['password']" v-model="newP" />
+      <AuthenticationInputPassword :classList="['password']" v-model="newP"/>
     </div>
     <div class="box">
       <p>确认密码</p>
-      <AuthenticationInputPassword :classList="['password']" v-model="reP" />
+      <AuthenticationInputPassword :classList="['password']" v-model="reP"/>
     </div>
     <div class="update">
-      <Submit type="primary" value="更新密码" />
+      <Submit type="primary" value="更新密码"/>
     </div>
   </div>
 </template>

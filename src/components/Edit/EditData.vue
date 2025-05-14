@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {ref} from 'vue'
+import {ref, watch} from 'vue'
 import {chartStore} from "@/stores";
 import {storeToRefs} from "pinia";
 import Scroll from "@/components/Common/Scroll.vue";
@@ -20,7 +20,10 @@ const yData = ref<string[]>([])
 const maxRows = ref(0)
 const maxCols = ref(0)
 
-if (selectChart.value) {
+const state = ref(false)
+
+const initData = () => {
+  if (!selectChart.value) return
   const {seriesData: a, xData: b, yData: c} = chartData.value[selectChart.value]
   const typeId = chartMessage.value[selectChart.value].typeId
   const {maxRows: r, maxCols: l} = chartMaxDimension[typeId]
@@ -31,7 +34,17 @@ if (selectChart.value) {
   maxCols.value = l
 }
 
-const colArr = "ABCDEFGH"
+initData()
+
+watch([seriesData, xData, yData], () => state.value = true, {deep: true})
+
+// watch()
+
+const updateData = () => {
+  if (!state.value) return
+  chartBox.value?.setOption(toggleChart.value, true)
+  state.value = false
+}
 </script>
 
 <template>
@@ -53,7 +66,7 @@ const colArr = "ABCDEFGH"
                     <th :style="{borderTop: i === 1 ? 'none' : '1px solid #ccc'}" class="row">
                       <input v-model="yData[i - 1]"/>
                     </th>
-                    <td :style="{borderTop: i === 1 ? 'none' : '1px solid #ccc'}" v-for="(_, j) in colArr.length">
+                    <td :style="{borderTop: i === 1 ? 'none' : '1px solid #ccc'}" v-for="(_, j) in maxCols">
                       <input type="number" v-model="seriesData[i - 1][j]"/>
                     </td>
                   </template>
@@ -68,7 +81,7 @@ const colArr = "ABCDEFGH"
                 <Submit type="primary" value="导入数据"/>
               </div>
               <div v-if="chartBox !== null" class="btn">
-                <Submit @click="chartBox.setOption(toggleChart, true)" value="确认"/>
+                <Submit @click="updateData" value="确认"/>
               </div>
             </div>
           </div>

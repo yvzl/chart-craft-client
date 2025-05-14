@@ -6,7 +6,7 @@ const {barList} = defineProps<{
   barList: INavBarItem[]
 }>()
 
-const emits = defineEmits();
+const emits = defineEmits()
 
 type StateMap = Record<INavBarItem["id"], boolean>
 

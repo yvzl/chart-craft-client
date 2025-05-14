@@ -10,7 +10,7 @@ const value = defineModel<typeof modelValue>()
 <template>
   <div class="authentication-input">
     <template v-if="value !== void 0">
-      <input autocomplete="new-password" type="text" :placeholder="placeholder" v-model="value"/>
+      <input type="text" :placeholder="placeholder" v-model="value"/>
     </template>
   </div>
 </template>

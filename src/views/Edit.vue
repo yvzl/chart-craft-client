@@ -7,7 +7,7 @@ import Header from "@/components/Common/Header.vue";
 import NavBar from "@/components/Common/NavBar.vue";
 import Collapse from "@/components/Edit/Collapse.vue";
 import ChartView from "@/components/Edit/ChartView.vue";
-import Modal from "@/components/Common/Modal.vue";
+// import Modal from "@/components/Common/Modal.vue";
 
 const route = useRoute()
 
@@ -31,6 +31,7 @@ const NavBarEmits = mapEvent(editBarList, editBarEventMap)
       <Collapse :data="collapseList" v-model="state"/>
     </div>
   </div>
+<!--  <Modal />-->
 </template>
 
 <style scoped lang="scss">

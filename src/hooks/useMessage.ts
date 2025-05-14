@@ -2,7 +2,7 @@ import {createApp, h, type App} from 'vue'
 import MessageComponent from '@/components/Common/Message.vue'
 import {IMessage, MessageType, MessageValue} from '@/types'
 
-export const useMessage = (type: MessageType, value: MessageValue, option?: Partial<Omit<IMessage, 'type' | 'value'>>) => {
+export const useMessage = (type: MessageType, value: MessageValue, option: Partial<Omit<IMessage, 'type' | 'value'>> = {}) => {
     let container = document.createElement('div')
     let app: App<Element> | null
 

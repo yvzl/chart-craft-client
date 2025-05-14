@@ -6,6 +6,10 @@ import Header from "@/components/Common/Header.vue";
 import Avatar from "@/components/Common/Avatar.vue";
 import UserAction from "@/components/User/UserAction.vue";
 import UserBar from "@/components/User/UserBar.vue";
+import {storeToRefs} from "pinia";
+import {userStore} from "@/stores";
+
+const {user} = storeToRefs(userStore())
 
 const state = ref("1")
 const userActionsListEmits = mapEvent(userActions, userActionsEventMap)
@@ -17,9 +21,9 @@ const userActionsListEmits = mapEvent(userActions, userActionsEventMap)
     <div class="main">
       <div class="info">
         <div class="head">
-          <Avatar/>
+          <Avatar :src="user?.avatar"/>
         </div>
-        <p>_wx 6459</p>
+        <p>{{ user?.name }}</p>
         <UserAction v-on="userActionsListEmits" :data="userActions"/>
       </div>
       <div class="content">

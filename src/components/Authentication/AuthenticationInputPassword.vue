@@ -15,8 +15,7 @@ const state = ref(false)
 <template>
   <div :class="`authentication-input authentication-input-password ${classList.join(' ')}`">
     <template v-if="value !== void 0">
-      <input autocomplete="new-password" :type="state ? 'text' : 'password'" :placeholder="placeholder"
-             v-model="value"/>
+      <input :type="state ? 'text' : 'password'" :placeholder="placeholder" v-model="value"/>
       <div class="mode" @click="state = !state">
         <PreviewOpen v-if="state"/>
         <PreviewCloseOne v-else/>

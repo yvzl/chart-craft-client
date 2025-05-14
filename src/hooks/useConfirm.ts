@@ -1,8 +1,8 @@
 import {type App, createApp, h, ref} from "vue"
 import Confirm from "@/components/Common/Confirm.vue";
 
-export const useConfirm = (value: string, onConfirm: () => void, onCancel: () => void) => {
-    const timer = 400
+export const useConfirm = (value: string, onConfirm: () => void = () => {}, onCancel: () => void = () => {}) => {
+    const timer = 350
     const state = ref(false)
     let container = document.createElement('div')
     let app: App<Element> | null
