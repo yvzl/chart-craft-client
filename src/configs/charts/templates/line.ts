@@ -1,3 +1,3 @@
-// export const lineTemplate = {
-//
-// }
+export const lineTemplate = {
+
+}

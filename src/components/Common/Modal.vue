@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import {onMounted} from 'vue';
+import {onMounted, type EmitFn} from 'vue';
 import {CloseSmall} from "@icon-park/vue-next";
+import type {HasModalEmits} from "@/types"
 import Submit from "@/components/Common/Submit.vue";
 
 const {title = "提示", showClose = true} = defineProps<{
@@ -9,7 +10,7 @@ const {title = "提示", showClose = true} = defineProps<{
   showClose?: boolean,
 }>()
 
-const emits = defineEmits(["cancel", "confirm", "mounted"]);
+const emits: EmitFn<HasModalEmits> = defineEmits(["cancel", "confirm", "mounted"]);
 
 onMounted(() => emits("mounted"))
 </script>

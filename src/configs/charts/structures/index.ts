@@ -1,5 +1,6 @@
+export * from "@/configs/charts/structures/subs"
+export * from "@/configs/charts/structures/options"
 export * from "@/configs/charts/structures/commonOption"
 export * from "@/configs/charts/structures/barOption"
 export * from "@/configs/charts/structures/lineOption"
 export * from "@/configs/charts/structures/pieOption"
-
