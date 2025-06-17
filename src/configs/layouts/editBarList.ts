@@ -45,7 +45,7 @@ export const editBarEventMap: Record<INavBarItem["id"], Fn> = {
 
     },
     3(_: Ref<StateMap>, __: string) {
-        console.log(1)
+
     },
     4(_: Ref<StateMap>, __: string) {
 

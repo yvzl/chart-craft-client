@@ -1,6 +1,6 @@
 import {defineStore} from "pinia";
 import {ref, computed} from "vue"
-import {IChart, IChartTemplate, EntityMap} from "@/types"
+import {IChart, IChartTemplate, EntityMap, IColor} from "@/types"
 import {barTemplate, chartToggleMap} from "@/configs"
 import type {EChartsType, EChartsOption} from "echarts"
 
@@ -21,6 +21,8 @@ export const chartStore = defineStore("chartStore", () => {
 
     const selectChart = ref<IChart["id"] | null>("1")
 
+    const selectColor = ref<IColor["id"]>("1")
+
     const chartBox = ref<EChartsType | null>(null);
 
     const toggleChart = computed<EChartsOption>(() => {
@@ -34,6 +36,9 @@ export const chartStore = defineStore("chartStore", () => {
         chartData,
         selectChart,
         chartBox,
-        toggleChart
+        toggleChart,
+        selectColor
     }
+}, {
+    persist: true,
 })

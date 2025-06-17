@@ -38,8 +38,6 @@ initData()
 
 watch([seriesData, xData, yData], () => state.value = true, {deep: true})
 
-// watch()
-
 const updateData = () => {
   if (!state.value) return
   chartBox.value?.setOption(toggleChart.value, true)

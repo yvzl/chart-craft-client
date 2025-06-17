@@ -1,13 +1,26 @@
 <script setup lang="ts">
-import {ref} from "vue";
 import {colorList} from "@/configs"
+import type {IColor} from "@/types"
 import Scroll from "@/components/Common/Scroll.vue";
+import {chartStore} from "@/stores";
+import {storeToRefs} from "pinia";
 
-const state = ref("1")
+const store = chartStore()
+
+const {selectChart, chartData, chartBox, toggleChart, selectColor} = storeToRefs(store)
 
 const {height = 0} = defineProps<{
   height?: number
 }>()
+
+const toggleColor = (id: IColor["id"]) => {
+  if(selectColor.value === id || !selectChart.value) return
+  selectColor.value = id
+  const value = chartData.value[selectChart.value]
+  value.bgColor = colorList[id].bgColor
+  value.colorData = colorList[id].itemColor.map(({value}) => value)
+  chartBox.value?.setOption(toggleChart.value, true)
+}
 </script>
 
 <template>
@@ -18,7 +31,7 @@ const {height = 0} = defineProps<{
           <div class="header">系统主题：</div>
           <div class="content">
             <ul class="outer-color">
-              <li v-for="{id, bgColor, itemColor} in colorList" :class="{active: state === id}" @click="state = id" :style="{backgroundColor: bgColor}" :key="id">
+              <li v-for="{id, bgColor, itemColor} in colorList" :class="{active: selectColor === id}" @click="toggleColor(id)" :style="{backgroundColor: bgColor}" :key="id">
                 <ul class="inner-color">
                   <li v-for="{id: _id, value} in itemColor" :style="{backgroundColor: value}" :key="_id"></li>
                 </ul>

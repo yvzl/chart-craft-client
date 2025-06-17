@@ -1,9 +1,9 @@
 import {defineStore} from "pinia";
 import {computed, ref} from "vue"
-import type {IUser} from "@/types"
+import {EntityMap, IUser} from "@/types"
 
 export const userStore = defineStore("userStore", () => {
-    const userList = ref<Record<IUser["id"], IUser>>({
+    const userList = ref<EntityMap<IUser>>({
         1: {
             id: "1",
             name: "张三",
